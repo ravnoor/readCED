@@ -1,4 +1,7 @@
-Updated: August 9th 2014
+Updated: August 11th 2014
+1. Program reading replicates of 1000 instead of the whole continuous data - Fixed!
+
+August 9th 2014
 1. Use readced.m to read all the CED files.
 2. Code uploaded to Github (https://github.com/ravnoor/readCED)
 
@@ -9,5 +12,9 @@ August 7th 2014
 
 The program outputs the filename with the *.mat extension in the same folder as the program files. Input files need to be in the readCED folder.
 
+Usage:
+readced('filename.smr')
 
+Output:
+filename.mat
 

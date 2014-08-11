@@ -37,15 +37,15 @@ function [d, s] = readced(filename, varargin)
 
 	[ns_RESULT, nsEntityInfo] = ns_GetEntityInfo(hFile, countr);
 	timepoints = nsEntityInfo.ItemCount;
-	tt = -1 + timepoints;
+	tt = -1 + timepoints/1000;
     
-    %R = [];
+    R = [];
 
 	for channel = 1:5
 
 		for n = 0:tt
 		
-			[ns_RESULT, ContCount, dx(channel).temp] = ns_GetAnalogData(hFile, channel + countr - 5, n+1, 1);
+			[ns_RESULT, ContCount, dx(channel).temp] = ns_GetAnalogData(hFile, channel + countr - 5, n+1, 1000);
 			dx(channel).Data2 = [dx(channel).Data2; dx(channel).temp];
             %if n > 0
             %    R[n] = corrcoef(dx(channel).Data2(1:1000), dx(channel).Data2(1+n*1000:1000*(n+1)));
